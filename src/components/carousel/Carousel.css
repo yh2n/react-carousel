@@ -1,0 +1,129 @@
+.carousel_container {
+    display: block;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    width: 100%;
+    /* border: solid purple; */
+    position: relative;
+}
+
+.slide_container {
+    /* position: relative; */
+    padding-top: 60%;
+    width: 100%;
+}
+
+.carousel_slide {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    /* border: solid blue; */
+}
+
+.slider_buttons_container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    top: 50%;
+    position: absolute;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.hidden_container {
+    opacity: 0;
+}
+
+.visible_container {
+    opacity: 1;
+}
+
+.slider_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 62px;
+    height: 62px;
+    background: white;
+    font-weight: 400;
+}
+
+.slider_button:hover {
+    cursor: pointer;
+}
+
+.chevron {
+    color: grey;
+}
+
+.chevron::before {
+    border-style: solid;
+    border-width: 0.09em 0.09em 0 0;
+    content: "";
+    display: inline-block;
+    height: 0.95em;
+    left: 0.15em;
+    position: relative;
+    top: 0.15em;
+    transform: rotate(-45deg);
+    vertical-align: top;
+    width: 0.95em;
+}
+
+.chevron.right:before {
+    left: 0;
+    transform: rotate(45deg);
+}
+
+.chevron.left:before {
+    left: 0.25em;
+    transform: rotate(-135deg);
+}
+
+@media only screen and (min-width: 1180px) {
+    .carousel_container {
+        margin-top: 70px;
+    }
+}
+
+@media all and (max-width: 799px) {
+    .slider_buttons_container-sm_screen {
+        position: static;
+        height: 50px;
+        width: 50%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .slider_buttons_container {
+        display: none;
+    }
+}
+
+@media all and (min-width: 800px) {
+    .slider_buttons_container-sm_screen {
+        display: none;
+    }
+}
+
+/* mobile */
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+    .slider_buttons_container-sm_screen {
+        position: static;
+        height: 50px;
+        width: 50%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .slider_buttons_container {
+        display: none;
+    }
+}
